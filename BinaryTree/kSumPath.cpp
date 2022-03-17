@@ -1,8 +1,6 @@
-class Solution{
-  public:
-    
-    void checkSum(Node* root, int k, int &cnt, vector<int> path)//cnt sabhi ka track store karega
+void checkSum(Node* root, int k, int &cnt, vector<int> &path)//cnt sabhi ka track store karega
     {
+        //ek catch hai yaha reference pass karoge path tb pop back use warna no use
         if(root==NULL)
             return;
         
@@ -44,4 +42,3 @@ class Solution{
         
         return cnt;
     }
-};
