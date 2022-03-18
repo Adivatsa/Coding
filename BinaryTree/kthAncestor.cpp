@@ -71,7 +71,7 @@ Node* calculateK(Node* root, int &k, int node)//decrement karte time k ka vlue r
         k--;
         if(k==0)//matlb yhi wala node hai
         {
-            k=INT_MAX;//k ko aisa value daal do wo kabhi 0 na ho paaye
+            k=INT_MAX;//k ko aisa value daal do wo kabhi 0 na ho paaye(not compulsory)
             return root;
         }
         return leftside;
@@ -81,7 +81,7 @@ Node* calculateK(Node* root, int &k, int node)//decrement karte time k ka vlue r
         k--;
         if(k==0)//matlb yhi wala node hai
         {
-            k=INT_MAX;//k ko aisa value daal do wo kabhi 0 na ho paaye
+            k=INT_MAX;//k ko aisa value daal do wo kabhi 0 na ho paaye(not compulsory)
             return root;
         }
         return rightside;
