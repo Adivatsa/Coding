@@ -18,7 +18,7 @@ class Solution{
         
         //It might possible that all will be negative so intialise with negative infinity
         long long maxSum=INT_MIN;
-        long long currSum=INT_MIN;
+        long long currSum=0;
         
         for(int i=0; i<n ; i++)
         {
