@@ -2,7 +2,7 @@ class Solution
 {
   public:
     //Function to find maximum of each subarray of size k.
-    vector <int> max_of_subarrays(int *arr, int n, int k)
+    vector<int> max_of_subarrays(int *arr, int n, int k)
     {
         //Ish question me humme toh har ek K size ke window ka max nekalna hai
         //Brute force me ek loop i se i+k tk phir uska max nekal lo
