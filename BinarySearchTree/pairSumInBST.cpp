@@ -26,7 +26,7 @@ class Solution{
         //Step 2: Use two pointer approach to find sum
         int i=0;
         int j=v.size()-1;
-        while(i<=j)
+        while(i<j)
         {
             if(v[i] + v[j]==target)//sum mil gya 
                 return 1;
