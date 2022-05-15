@@ -33,4 +33,29 @@ int t[101][101];
             }
         }
         return t[1][N-1];
+
+
+        //Tech Dose approach
+
+         for(int i=0; i<N; i++)
+        {
+            t[i][i]=0;
+        }
+        
+        for(int cl=2; cl<N; cl++)
+        {
+            for(int l=1;l<=(N-cl); l++)
+            {
+                int r=l+cl-1;
+                t[l][r]=INT_MAX;
+                
+                for(int k=l; k<r; k++)
+                {
+                    int temp=t[l][k]+t[k+1][r]+ (arr[l-1]*arr[k]*arr[r]);
+                    t[l][r]=min(t[l][r],temp);
+                }
+            }
+        }
+        
+        return t[1][N-1];
     }
