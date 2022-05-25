@@ -66,7 +66,8 @@ int main()
     //chota jiska key value hga ushe nekalna hai so isliye wo chahiye
 
     q.push({0,0});
-    for(int c=0; c<v-1; c++)
+    // for(int c=0; c<v-1; c++)//in brute force
+    while(!q.empty())    //in optimsed use 
     {
         // int mini=INT_MAX;
         // int node;
@@ -80,6 +81,8 @@ int main()
         //         node=i;
         //     }
         // }
+
+        
 
         int node=q.top().second;
         q.pop();
