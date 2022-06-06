@@ -28,8 +28,19 @@
 //         }
 //         return prev;
         
-        reverseRecursion(head, curr,prev);
-        return head;
+        //reverseRecursion(head, curr,prev);
+        //return head;
+	    
+	    
+	    //Method 3:
+        if(head==NULL || head->next==NULL)
+            return head;
+        
+        ListNode* newhead=reverseList(head->next);//it will automatically has head 
+        
+        head->next->next=head;//ulta gumma do shuru ke block ko
+        head->next=NULL;
+        return newhead;
     }
 
 
