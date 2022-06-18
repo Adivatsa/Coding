@@ -76,6 +76,23 @@ class Solution {
         
         return p.first;
         
-        
+        //Method 3
+        //we will pass diameter as call by reference and upadate each time when encounter nay node
+        int d=0;
+        solve(root,d);
+        return d;
     }
+    int solve(TreeNode* root, int &d)
+    {
+        if(root==NULL)
+            return 0;
+        //find the height from left and right subtree
+        int l=solve(root->left,d);
+        int r=solve(root->right,d);
+        
+        //Update the diameter
+        d=max(d, l+r);
+        //Return height 
+         return max(l,r)+1;
+            
 };
