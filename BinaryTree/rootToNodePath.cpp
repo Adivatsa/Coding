@@ -31,6 +31,10 @@ vector<int> Solution::solve(TreeNode* A, int B) {
     return ans;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8bf67b1548e8545acaf7e371755807c3e01bfa4
  void sol(TreeNode* A, int B, vector<int> &ans, vector<int>&op)
  {
      if(A==NULL)
@@ -63,4 +67,8 @@ vector<int> Solution::solve(TreeNode* A, int B) {
     //call for finding path from root to node B
     sol(A,B,ans,op);
     return ans;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a8bf67b1548e8545acaf7e371755807c3e01bfa4
