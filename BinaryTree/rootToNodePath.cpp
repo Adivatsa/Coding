@@ -30,3 +30,38 @@ vector<int> Solution::solve(TreeNode* A, int B) {
     sol(A,B,ans);
     return ans;
 }
+
+
+ void sol(TreeNode* A, int B, vector<int> &ans, vector<int>&op)
+ {
+     if(A==NULL)
+        return;
+    //if node has been found then insert all to ans vector and return
+    
+    //Another method just another vector to store only output path
+    if(A->val==B)
+    {
+        op.push_back(A->val);
+        for(auto it:op)
+            ans.push_back(it);
+        return;
+    }
+    //insert the node and make left and right call
+    //then not found simply pop back
+    op.push_back(A->val);
+    if(A->left!=NULL)
+        sol(A->left,B,ans,op);
+    if(A->right!=NULL)
+        sol(A->right,B,ans,op); 
+    op.pop_back();  
+    return; 
+ }
+vector<int> Solution::solve(TreeNode* A, int B) {
+    vector<int> ans;
+    vector<int>op;
+    if(A==NULL)
+    return ans;
+    //call for finding path from root to node B
+    sol(A,B,ans,op);
+    return ans;
+}
