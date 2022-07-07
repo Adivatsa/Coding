@@ -1,35 +1,32 @@
     //bool t[101][101];
     
-    bool solve1(string s1, string s2, string s3, int i, int j, vector<vector<bool>> &t)
+    bool solve1(string s1, string s2, string s3, int i, int j, vector<vector<int>> &t)
     {
-        //Base case
-        if(i==s1.length() && j==s2.length())
-            return true;
-        //check if not null return from here
-        if(t[i][j]>=0)
+        //check if not -1 return from here
+        if(t[i][j]!=-1)
         {
             return t[i][j];
         }
-            
+        
+        //Base case
+        if(i==s1.length() && j==s2.length())
+            return true;
+        
+        bool str1=false;
+        bool str2=false;
+        
         //check for string s1 and s3 if matches then return true
         if(i<s1.length() && s1[i]==s3[i+j])
         {
-            bool str1=solve1(s1,s2,s3,i+1,j,t);
-            t[i][j]=str1;
-            if(str1==true)
-                return true;
+            str1=solve1(s1,s2,s3,i+1,j,t);
         }
         //check for string s2 and s3 if matches then return true
         if(j<s2.length() && s2[j]==s3[i+j])
         {
-            bool str2=solve1(s1,s2,s3,i,j+1,t);
-            bool str3=solve1(s1,s2,s3,i+1,j+1,t);
-            t[i][j]=str2 ||str3;
-            if(str2==true)
-                return true;
+            str2=solve1(s1,s2,s3,i,j+1,t);
         }
-        t[i][j]=false;
-        return false;
+        
+        return t[i][j]=str1|| str2;
     }
         
 //     bool solve(string s1, string s2, string s3, int i, int j, int)
@@ -68,7 +65,7 @@
         
         //Method 2: Memoization or Top Down TC=O(n*m)
         
-        vector<vector<bool>> t(s1.length()+1, vector<bool>(s2.length()+1, 0));
+        vector<vector<int>> t(s1.length()+1, vector<int>(s2.length()+1, -1));
         
         return solve1(s1,s2,s3,0,0,t);
         
