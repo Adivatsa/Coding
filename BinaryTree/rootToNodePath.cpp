@@ -69,6 +69,22 @@ vector<int> Solution::solve(TreeNode* A, int B) {
     return ans;
 <<<<<<< HEAD
 }
-=======
+
+vector<int> pathInATree(TreeNode<int> *root, int x)
+{
+    // Write your code here.
+    
+    //check using bool we will store the node
+    //if null then return false
+    //otherwise if found then push and return back
+    //if found in left or right subtree return true
+    //otherwise remove and return false
+    vector<int> ans;
+    if(root==NULL)
+        return ans;
+    if(printpath(root,x,ans))
+        return ans;
+    return {};
+    
 }
->>>>>>> a8bf67b1548e8545acaf7e371755807c3e01bfa4
+
